@@ -42,14 +42,23 @@ puts (spiciest_foods(spicy_foods))
 # "hello" * 3 == "hellohellohello"
 def print_spicy_foods(spicy_foods)
   # your code here
+  spicy_foods.each do |spicy_food|
+    puts "#{spicy_food[:name] } (#{spicy_food[:cuisine]}) | Heat Level: #{"🌶".*spicy_food[:heat_level]}" 
+  end
+  
     
 end
+
+
 
 
 # given an array of spicy foods and a string representing a cuisine, **return a single hash**  
 # for the spicy food whose cuisine matches the cuisine being passed to the method
 def get_spicy_food_by_cuisine(spicy_foods, cuisine)
   # your code here
+  spicy_foods.find do |spicy_food|
+    spicy_food[:cuisine]==cuisine
+  end
   
   
 end
@@ -71,6 +80,8 @@ puts (sort_by_heat(spicy_foods))
 # HINT: Try to use methods you've already written to solve this!
 def print_spiciest_foods(spicy_foods)
   # your code here
+  print_spicy_foods( spiciest_foods(spicy_foods))
+  
   
 end
 
